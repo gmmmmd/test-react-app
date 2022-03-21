@@ -1,0 +1,17 @@
+.nav {
+  grid-area: nav;
+  background-color: #4267B2;
+}
+
+.items {
+  list-style-type: none;
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a:hover {
+  color: gold;
+}
