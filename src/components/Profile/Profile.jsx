@@ -9,6 +9,7 @@ const Profile = () => {
       </div>
       <div>
         ava + description
+        <div></div>
       </div>
       <MyPosts />
     </section>
