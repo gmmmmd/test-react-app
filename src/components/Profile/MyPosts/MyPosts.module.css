@@ -1,7 +1,60 @@
+.postsBlock {
+  padding: 15px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.textarea {
+  cursor: pointer;
+  background-color: #292929;
+  box-shadow:0 0 10px white;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  height: 100px;
+  width: 100%;
+}
+
+.textareaWrapper {
+  margin-bottom: 30px;
+}
+
+.textarea:focus { 
+  outline:none;
+  border-color: gold;
+  box-shadow:0 0 10px gold;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #292929;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: wheat;
+  max-width: 350px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
 .items {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

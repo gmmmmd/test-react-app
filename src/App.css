@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  color: #fff;
+  font-size: 16px;
+  line-height: calc(20 / 16);
 }
 .container {
   max-width: 1220px;
   padding: 0 20px;
   margin: 0 auto;
-  /* height: 100vh; */
+  height: 99vh;
 }
 
 .app-wrapper {
@@ -13,21 +16,13 @@
   grid-template-areas:
   "header header header"
   "nav content content";
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 1fr 11fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
 
 .app-wrapper__content {
   grid-area: content;
-  background-color: #4267B2;
+  background-color: #292929;
   border-radius: 15px;
 }
-
-.app-wrapper__content img {
-  max-width: 100%;
-  object-fit: cover;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-}
-

@@ -11,7 +11,7 @@ const Navbar = () => {
           <NavLink to='/profile' className={setActive}>Profile</NavLink>
         </li>
         <li>
-          <NavLink to='/messages' className={setActive}>Messages</NavLink>
+          <NavLink to='/dialogs' className={setActive}>Messages</NavLink>
         </li>
         <li>
           <NavLink to='/news' className={setActive}>News</NavLink>
@@ -20,7 +20,7 @@ const Navbar = () => {
           <NavLink to='/music' className={setActive}>Music</NavLink>
         </li>
         <li>
-          <NavLink to='settings' className={setActive}>Settings</NavLink>
+          <NavLink to='/settings' className={setActive}>Settings</NavLink>
         </li>
       </ul>
     </nav>

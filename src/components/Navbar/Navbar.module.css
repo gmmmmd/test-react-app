@@ -1,6 +1,7 @@
 .nav {
   grid-area: nav;
-  background-color: #4267B2;
+  color: #fff;
+  background-color: #292929;
   border-radius: 15px;
   min-height: 300px;
 }
@@ -14,16 +15,10 @@
   gap: 10px;
 }
 
-.item {
-  color: white;
-  text-decoration: none;
-}
-
 .item:hover {
   color: gold;
 }
 
 .active {
   color: gold;
-  text-decoration: none;
 }

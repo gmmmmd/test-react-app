@@ -1,0 +1,19 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.imgBlock {
+    min-height: 400px;
+    padding: 15px;
+}
+
+.imgBlock img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.descriptionBlock {
+    padding: 15px;
+}

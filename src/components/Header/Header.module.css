@@ -1,9 +1,15 @@
 .header {
     grid-area: header;
-    background-color: #4267B2;
+    display: flex;
+    background-color: #292929;
     border-radius: 15px;
   }
   
   .header img {
-    max-width: 60px;
+    max-width: 90px;
+    object-fit: cover;
+  }
+
+  .logo {
+    display: flex;
   }

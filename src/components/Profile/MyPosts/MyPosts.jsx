@@ -3,10 +3,15 @@ import Post from './Post/Post';
 
 const MyPosts = () => {
   return (
-    <div>
-      My posts
+    <div className={classes.postsBlock}>
+      <h3 className={classes.title}>My posts</h3>
       <div>
-        New posts
+        <div className={classes.textareaWrapper}>
+          <textarea className={classes.textarea}></textarea>
+        </div>
+        <div className={classes.buttonWrapper}>
+          <button className={classes.button}>Add post</button>
+        </div>
         <div className={classes.items}>
           <Post message='Hi, how are you?' like='15' />
           <Post message="It's my first post" like='7' />
