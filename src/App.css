@@ -17,3 +17,17 @@
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
+
+.app-wrapper__content {
+  grid-area: content;
+  background-color: #4267B2;
+  border-radius: 15px;
+}
+
+.app-wrapper__content img {
+  max-width: 100%;
+  object-fit: cover;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+

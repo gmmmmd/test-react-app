@@ -3,16 +3,18 @@ import classes from './Profile.module.css';
 
 const Profile = () => {
   return (
-    <section className={classes.content}>
+    <div>
       <div>
         <img src='https://get-edu.kz/wp-content/uploads/2020/04/helpbox-contact.jpg' alt='' />
       </div>
-      <div>
-        ava + description
-        <div></div>
+      <div className={classes.textContent}>
+        <div>
+          ava + description
+          <div></div>
+        </div>
+        <MyPosts />
       </div>
-      <MyPosts />
-    </section>
+    </div>
   );
 }
 
