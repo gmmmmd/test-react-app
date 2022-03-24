@@ -5,8 +5,10 @@ const Post = (props) => {
     <div className={classes.item}>
       <img src='https://i.imgur.com/SOwTq2D.png' />
       <div>
-        <span>{props.message}</span>
-        <span>Like {props.like}</span>
+        <span>{props.message} </span>
+        <div>
+          <span>Like {props.like}</span>
+        </div>
       </div>
     </div>
   );
