@@ -3,9 +3,16 @@
 }
 
 .title {
-  text-align: center;
   font-size: 24px;
   line-height: 1.2;
+}
+
+.wrapper {
+  margin: 0 0 30px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .textarea {
@@ -21,19 +28,10 @@
   width: 100%;
 }
 
-.textareaWrapper {
-  margin-bottom: 30px;
-}
-
 .textarea:focus { 
   outline:none;
   border-color: gold;
   box-shadow:0 0 10px gold;
-}
-
-.buttonWrapper {
-  display: flex;
-  justify-content: center;
 }
 
 .button {

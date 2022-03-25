@@ -24,6 +24,17 @@ const state = {
       { id: 5, name: 'Victor' },
       { id: 6, name: 'Valera' }
     ]
+  },
+
+  navbarComponents: {
+    navbar: [
+      {id:1, item: 'Profile', to: 'profile'},
+      {id:2, item: 'Messages', to: 'dialogs'},
+      {id:3, item: 'News', to: 'news'},
+      {id:4, item: 'Music', to: 'music'},
+      {id:5, item: 'Settings', to: 'settings'},
+      {id:6, item: 'Friends', to: 'friends'}
+    ]
   }
 }
 

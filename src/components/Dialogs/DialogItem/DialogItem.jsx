@@ -5,11 +5,15 @@ const DialogItem = (props) => {
 
   let path = '/dialogs/' + props.id;
 
-  const setActive = ({ isActive }) => isActive ? classes.active : classes.item;
+  const setActive = ({ isActive }) => isActive ? classes.active : classes.name;
 
   return (
-    <li>
-      <NavLink to={path} className={setActive}>{props.name}</NavLink>
+    <li className={classes.item}>
+      
+      <NavLink to={path} className={setActive}>
+        <img src='https://i.imgur.com/SOwTq2D.png' alt='' className={classes.avatar} />
+        {props.name}
+      </NavLink>
     </li>
   );
 }

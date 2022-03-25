@@ -9,10 +9,8 @@ const MyPosts = (props) => {
     <div className={classes.postsBlock}>
       <h3 className={classes.title}>My posts</h3>
       <div>
-        <div className={classes.textareaWrapper}>
+        <div className={classes.wrapper}>
           <textarea className={classes.textarea}></textarea>
-        </div>
-        <div className={classes.buttonWrapper}>
           <button className={classes.button}>Add post</button>
         </div>
         <div className={classes.items}>
