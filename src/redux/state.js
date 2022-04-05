@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -19,6 +23,7 @@ let store = {
         { id: 4, message: 'Yo' },
         { id: 5, message: 'Yo' }
       ],
+
       dialogs: [
         { id: 1, name: 'Dima' },
         { id: 2, name: 'Andrey' },
@@ -26,7 +31,8 @@ let store = {
         { id: 4, name: 'Sasha' },
         { id: 5, name: 'Victor' },
         { id: 6, name: 'Valera' }
-      ]
+      ],
+      newMessageBody: '',
     },
 
     navbarComponents: {
@@ -52,19 +58,12 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      const newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likeCount: 0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
+
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.navbarComponents = navbarReducer(this._state.navbarComponents, action);
+
+    this._callSubscriber(this._state);
   },
 }
 
