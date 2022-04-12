@@ -22,7 +22,7 @@ const rerenderEntireTree = (state) => {
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
-  const state = store.getState();
+  let state = store.getState();
   rerenderEntireTree(state);
 });
 
