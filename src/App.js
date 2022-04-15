@@ -12,14 +12,16 @@ import { Routes, Route } from 'react-router-dom';
 
 
 const App = (props) => {
+  console.log(props)
   return (
     <div className='app-wrapper container'>
       <Header />
-      <Navbar state={props.state.navbarComponents}/>
+      <Navbar />
+      {/* <Navbar state={props.state.navbarComponents}/> */}
       <div className='app-wrapper__content'>
         <Routes>
-          <Route path='/profile' element={<Profile store={props.store} />} />
-          <Route path='/dialogs/*' element={<DialogsContainer store={props.store} />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/dialogs/*' element={<DialogsContainer />} />
           <Route path='/news' element={<News />} />
           <Route path='/music' element={<Music />} />
           <Route path='/settings' element={<Settings />} />
