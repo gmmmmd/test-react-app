@@ -1,4 +1,3 @@
-import React from 'react';
 import MyPosts from './MyPosts';
 import { addPostActionCreator, updateNewPostActionCreator } from './../../../redux/profile-reducer';
 import { connect } from 'react-redux';
@@ -6,7 +5,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
-    NewPostText : state.profilePage.newPostText
+    newPostText : state.profilePage.newPostText
   }
 }
 
