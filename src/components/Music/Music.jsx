@@ -1,11 +1,11 @@
-import classes from './Music.module.css';
+//import classes from './Music.module.css';
 
 const Music = () => {
   return (
     <div>
-        Music
+      Music
     </div>
   );
-}
+};
 
 export default Music;

@@ -3,7 +3,7 @@ import classes from './Post.module.css';
 const Post = (props) => {
   return (
     <div className={classes.item}>
-      <img src='https://i.imgur.com/SOwTq2D.png' />
+      <img src="https://i.imgur.com/SOwTq2D.png" alt="аватар" />
       <div>
         <span>{props.message} </span>
         <div>
@@ -12,6 +12,6 @@ const Post = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Post;

@@ -1,8 +1,8 @@
-import profileReducer from "./profile-reducer";
-import dialogsReducer from "./dialogs-reducer";
-import navbarReducer from "./navbar-reducer";
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import navbarReducer from './navbar-reducer';
 
-let store = {
+const store = {
   _state: {
     profilePage: {
       posts: [
@@ -10,7 +10,7 @@ let store = {
         { id: 2, message: 'It\'s my first post', likesCount: 7 },
         { id: 3, message: 'BlaBla', likesCount: 11 },
         { id: 4, message: 'DaDa', likesCount: 11 },
-        { id: 45, message: 'I\'m learn lesson 37', likesCount: 31 }
+        { id: 45, message: 'I\'m learn lesson 37', likesCount: 31 },
       ],
       newPostText: 'it-kamasutra.com',
     },
@@ -21,7 +21,7 @@ let store = {
         { id: 2, message: 'How is your it-kamasutra?' },
         { id: 3, message: 'Yo' },
         { id: 4, message: 'Yo' },
-        { id: 5, message: 'Yo' }
+        { id: 5, message: 'Yo' },
       ],
 
       dialogs: [
@@ -30,7 +30,7 @@ let store = {
         { id: 3, name: 'Sveta' },
         { id: 4, name: 'Sasha' },
         { id: 5, name: 'Victor' },
-        { id: 6, name: 'Valera' }
+        { id: 6, name: 'Valera' },
       ],
       newMessageBody: '',
     },
@@ -42,9 +42,9 @@ let store = {
         { id: 3, item: 'News', to: 'news' },
         { id: 4, item: 'Music', to: 'music' },
         { id: 5, item: 'Settings', to: 'settings' },
-        { id: 6, item: 'Friends', to: 'friends' }
-      ]
-    }
+        { id: 6, item: 'Friends', to: 'friends' },
+      ],
+    },
   },
   _callSubscriber() {
     console.log('State changed');
@@ -65,7 +65,7 @@ let store = {
 
     this._callSubscriber(this._state);
   },
-}
+};
 
 export default store;
 window.store = store;

@@ -10,19 +10,19 @@ const MyPosts = (props) => {
 
   const addPost = () => {
     props.addPost();
-  }
+  };
 
   const onPostChange = () => {
     const text = newPostElement.current.value;
     props.updateNewPostText(text);
-  }
+  };
 
   return (
     <div className={classes.postsBlock}>
       <h3 className={classes.title}>My posts</h3>
       <div>
         <div className={classes.items}>
-          {postsElement}
+          { postsElement }
         </div>
         <div className={classes.wrapper}>
           <textarea className={classes.textarea}
@@ -34,6 +34,6 @@ const MyPosts = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default MyPosts;

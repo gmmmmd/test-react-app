@@ -1,7 +1,9 @@
 .wrapper {
-    display: flex;
+  display: flex;
 }
+
 .userPhoto {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }

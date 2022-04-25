@@ -3,40 +3,40 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-  let state = props.dialogsPage;
+  const state = props.dialogsPage;
 
-  let dialogsElement = state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
-  let messagesElement = state.messages.map(m => <Message key={m.id} message={m.message} />);
-  let newMessageBody = state.newMessageBody;
+  const dialogsElement = state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
+  const messagesElement = state.messages.map(m => <Message key={m.id} message={m.message} />);
+  const newMessageBody = state.newMessageBody;
 
-  let onSendMessageClick = () => {
+  const onSendMessageClick = () => {
     props.sendMessageCreator();
-  }
+  };
 
-  let onNewMessageChange = (e) => {
-    let body = e.target.value;
+  const onNewMessageChange = (e) => {
+    const body = e.target.value;
     props.updateNewMessageBody(body);
-  }
+  };
 
   return (
     <div className={classes.dialogs}>
       <ul className={classes.items}>
-        {dialogsElement}
+        { dialogsElement }
       </ul>
       <div className={classes.wrapper}>
         <ul className={classes.messages}>
-          {messagesElement}
+          { messagesElement }
         </ul>
         <textarea className={classes.textarea}
-          placeholder='Enter your message'
+          placeholder="Enter your message"
           value={newMessageBody}
           onChange={onNewMessageChange}
-          >
+        >
         </textarea>
         <button className={classes.button} onClick={onSendMessageClick}>Send message</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dialogs;
