@@ -40,7 +40,7 @@
   color: #292929;
   font-size: 20px;
   font-weight: 700;
-  background-color: wheat;
+  background-color: #5181b8;
   width: 100%;
   padding: 10px 20px;
 }
@@ -70,16 +70,16 @@
 }
 
 .name:hover {
-  color: gold;
-  border: 1px solid gold;
+  color: #5181b8;
+  border: 1px solid #5181b8;
 }
 
 .active {
-  color: gold;
+  color: #5181b8;
   display: flex;
   align-items: center;
   gap: 20px;
-  border: 1px solid gold;
+  border: 1px solid #5181b8;
   border-radius: 5px;
   padding: 5px 30px;
 }

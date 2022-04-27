@@ -20,7 +20,7 @@ const Navbar = (props) => {
   return (
     <nav className={classes.nav}>
       <ul className={classes.items}>
-        { /* {navbarElements} */}
+        { /* {navbarElements} */ }
         <li><NavLink to="/profile" className={setActive}>Profile</NavLink></li>
         <li><NavLink to="/dialogs" className={setActive}>Dialogs</NavLink></li>
         <li><NavLink to="/users" className={setActive}>Users</NavLink></li>

@@ -30,8 +30,8 @@
 
 .textarea:focus {
   outline: none;
-  border-color: gold;
-  box-shadow: 0 0 10px gold;
+  border-color: #5181b8;
+  box-shadow: 0 0 10px #5181b8;
 }
 
 .button {
@@ -43,7 +43,7 @@
   color: #292929;
   font-size: 20px;
   font-weight: 700;
-  background-color: wheat;
+  background-color: #5181b8;
   max-width: 350px;
   width: 100%;
   padding: 10px 20px;

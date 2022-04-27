@@ -8,22 +8,52 @@ class Users extends React.Component {
 
   componentDidMount() {
     if (this.props.users.length === 0) {
-      axios.get('https://social-network.samuraijs.com/api/1.0/users')
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
         .then(response => {
           this.props.setUsers(response.data.items);
+          this.props.setTotalUsersCount(response.data.totalCount);
         });
     }
   }
 
+  onPageChanged (pageNumber) {
+    this.props.setCurrentPage(pageNumber);
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+      .then(response => {
+        this.props.setUsers(response.data.items);
+      });
+  }
+
   render() {
+
+    const pagesCount = Math.ceil (this.props.totalUsersCount / this.props.pageSize);
+
+    const pages = [];
+
+    for (let i = 1; i <= pagesCount; i++) {
+      pages.push(i);
+    }
+
+    const curPage = this.props.currentPage;
+    const curPF = ((curPage - 3) < 0) ? 0 : curPage - 3;
+    const curPL = curPage + 3;
+    const slicedPages = pages.slice(curPF, curPL);
+
+    
+
     return (
       <div>
-        <div>
-          <span className={styles.selectedPage}>1</span>
-          <span className={styles.selectedPage}>2</span>
-          <span className={styles.selectedPage}>3</span>
-          <span className={styles.selectedPage}>4</span>
-          <span className={styles.selectedPage}>5</span>
+        <div className={styles.Pagination}>
+          { slicedPages.map(i => {
+            return (
+              <button
+                className={this.props.currentPage === i && styles.selectedPage}
+                onClick={() => {this.onPageChanged(i);}}
+              >
+                { i }
+              </button>
+            );
+          }) }
         </div>
         <ul className={styles.list}>
           {
