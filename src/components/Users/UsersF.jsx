@@ -24,19 +24,19 @@ const Users = (props) => {
               <img src={u.photos.small != null ? u.photo.small : userPhoto} alt="аватар" className={styles.userPhoto} />
             </div>
             <div>
-              {u.followed
+              { u.followed
                 ? <button onClick={() => { props.unfollow(u.id); }}>Unfollow</button>
-                : <button onClick={() => { props.follow(u.id); }}>Follow</button>}
+                : <button onClick={() => { props.follow(u.id); }}>Follow</button> }
             </div>
           </span>
           <span>
             <span>
-              <div>{u.name}</div>
-              <div>{u.status}</div>
+              <div>{ u.name }</div>
+              <div>{ u.status }</div>
             </span>
             <span>
-              <div>{'u.location.country'}</div>
-              <div>{'u.location.city'}</div>
+              <div>{ u.location.country }</div>
+              <div>{ u.location.city }</div>
             </span>
           </span>
         </div>)

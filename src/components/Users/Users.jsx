@@ -35,8 +35,8 @@ class Users extends React.Component {
     }
 
     const curPage = this.props.currentPage;
-    const curPF = ((curPage - 3) < 0) ? 0 : curPage - 3;
-    const curPL = curPage + 3;
+    const curPF = ((curPage - 5) < 0) ? 0 : curPage - 5;
+    const curPL = curPage + 5;
     const slicedPages = pages.slice(curPF, curPL);
 
     
