@@ -23,14 +23,14 @@ const ProfileInfo = (props) => {
       </div>
       <div className={classes.descriptionBlock}>
         <h2>Контакты:</h2>
-        <p>{ props.profile.contacts.facebook }</p>
-        <p>{ props.profile.contacts.github }</p>
-        <p>{ props.profile.contacts.instagram }</p>
-        <p>{ props.profile.contacts.mainLink }</p>
-        <p>{ props.profile.contacts.twitter }</p>
-        <p>{ props.profile.contacts.vk }</p>
-        <p>{ props.profile.contacts.website }</p>
-        <p>{ props.profile.contacts.youtube }</p>
+        <a href={props.profile.contacts.facebook}>{ props.profile.contacts.facebook }</a>
+        <a href={props.profile.contacts.github}>{ props.profile.contacts.github }</a>
+        <a href={props.profile.contacts.instagram}>{ props.profile.contacts.instagram }</a>
+        <a href={props.profile.contacts.mainLink}>{ props.profile.contacts.mainLink }</a>
+        <a href={props.profile.contacts.twitter}>{ props.profile.contacts.twitter }</a>
+        <a href={props.profile.contacts.vk}>{ props.profile.contacts.vk }</a>
+        <a href={props.profile.contacts.website}>{ props.profile.contacts.website }</a>
+        <a href={props.profile.contacts.youtube}>{ props.profile.contacts.youtube }</a>
       </div>
     </div>
   );
