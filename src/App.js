@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -16,7 +16,7 @@ const App = (props) => {
   
   return (
     <div className="app-wrapper container">
-      <Header />
+      <HeaderContainer />
       <Navbar />
       { /* <Navbar state={props.state.navbarComponents}/> */ }
       <div className="app-wrapper__content">
