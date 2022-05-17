@@ -30,4 +30,34 @@ export const usersAPI = {
         })
     );
   },
+  getUserProfile(userId) {
+    return (
+      instanse.get(`profile/${userId}`)
+        .then(response => {
+          return (
+            response.data
+          );
+        })
+    );
+  },
+  getFollowUser(id) {
+    return (
+      instanse.delete(`follow/${id}`)
+        .then(response => {
+          return (
+            response.data
+          );
+        })
+    );
+  },
+  getUnfollowUser(id) {
+    return (
+      instanse.post(`follow/${id}`)
+        .then(response => {
+          return (
+            response.data
+          );
+        })
+    );
+  },
 };
