@@ -40,9 +40,9 @@ export const usersAPI = {
         })
     );
   },
-  getFollowUser(id) {
+  getUnfollowUser(userId) {
     return (
-      instanse.delete(`follow/${id}`)
+      instanse.delete(`follow/${userId}`)
         .then(response => {
           return (
             response.data
@@ -50,9 +50,9 @@ export const usersAPI = {
         })
     );
   },
-  getUnfollowUser(id) {
+  getFollowUser(userId) {
     return (
-      instanse.post(`follow/${id}`)
+      instanse.post(`follow/${userId}`)
         .then(response => {
           return (
             response.data
