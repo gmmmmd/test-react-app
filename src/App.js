@@ -9,6 +9,7 @@ import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import Login from './components/Login/Login';
 
 
 
@@ -21,6 +22,7 @@ const App = (props) => {
       { /* <Navbar state={props.state.navbarComponents}/> */ }
       <div className="app-wrapper__content">
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/profile/" element={<ProfileContainer />}>
             <Route path=":userId" element={<ProfileContainer />} />
           </Route>
