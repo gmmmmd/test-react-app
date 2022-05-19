@@ -30,14 +30,9 @@ export const usersAPI = {
         })
     );
   },
-  getUserProfile(userId) {
+  getProfile(userId) {
     return (
       instanse.get(`profile/${userId}`)
-        .then(response => {
-          return (
-            response.data
-          );
-        })
     );
   },
   getUnfollowUser(userId) {
@@ -58,6 +53,14 @@ export const usersAPI = {
             response.data
           );
         })
+    );
+  },
+};
+
+export const authAPI = {
+  me() {
+    return (
+      instanse.get('auth/me')
     );
   },
 };
