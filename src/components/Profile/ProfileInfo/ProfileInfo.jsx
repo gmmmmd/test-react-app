@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
   
@@ -20,6 +21,7 @@ const ProfileInfo = (props) => {
       <div className={classes.imgBlock}>
         { /* <img src="https://get-edu.kz/wp-content/uploads/2020/04/helpbox-contact.jpg" alt="" width={300} height={300} /> */ }
         <img src={props.profile.photos.large} alt="user-avatar" width={300} height={300} />
+        <ProfileStatus status={'Hello my friends'} />
       </div>
       <div className={classes.descriptionBlock}>
         <h2>Контакты:</h2>
