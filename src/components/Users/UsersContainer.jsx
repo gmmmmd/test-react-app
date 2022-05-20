@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import Preloader from '../common/Preloader/Preloader';
 import { 
   follow, 
@@ -55,6 +56,8 @@ const mapStateToProps = (state) => {
   };
 };
 
+const withRedirect = withAuthRedirect(UsersContainer);
+
 export default connect(mapStateToProps, 
   { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers }
-)(UsersContainer);
+)(withRedirect);
