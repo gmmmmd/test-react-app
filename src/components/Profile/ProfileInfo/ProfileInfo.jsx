@@ -8,7 +8,8 @@ const ProfileInfo = (props) => {
     return (
       <Preloader />
     );
-  }  
+  }
+  
   return (
     <div className={classes.wrapper}>
       <div>

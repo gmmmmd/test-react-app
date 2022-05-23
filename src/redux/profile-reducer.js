@@ -58,10 +58,8 @@ export const getUserProfile = (userId) => {
 
 export const getStatus = (userId) => {
   return (
-    (dispatch) => {
-      
+    (dispatch) => {      
       profileAPI.getStatus(userId).then(response => {
-        console.log(response.data)
         dispatch(setStatus(response.data));
       });
     }

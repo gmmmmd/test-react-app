@@ -5,12 +5,11 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 //import classes from './Profile.module.css';
 
 const Profile = (props) => {
-  console.log(props)
   return (
     <div>
       <ProfileInfo
         profile={props.profile}
-        status={props.getUserStatus}
+        status={props.status}
         updateStatus={props.updateStatus}
       />
       <MyPostsContainer />

@@ -60,7 +60,7 @@ export const profileAPI = {
   },
   getStatus(userId) {
     return (
-      instanse.get(`profile/status/` + userId)
+      instanse.get(`profile/status/${userId}`)
     );
   },
   updateStatus(status) {

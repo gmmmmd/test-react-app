@@ -27,12 +27,20 @@ class ProfileStatus extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.status !== this.props.status) {
+      this.setState({
+        status: this.props.status,
+      });
+    }
+  }
+
   render() {
     return (
       <div>
         { !this.state.editMode &&
           <div>
-            <span onDoubleClick={this.activateEditMode} >{ this.props.status ? this.props.status : 'Введите статус' }</span>
+            <span onDoubleClick={this.activateEditMode} >{ this.props.status || 'Введите статус' }</span>
           </div>
         }
         { this.state.editMode &&
@@ -40,10 +48,9 @@ class ProfileStatus extends React.Component {
             <input
               type="text"
               onChange={this.onStatusChange}
-              value={this.props.status}
               onBlur={this.deactivateEditMode}
               autoFocus={true}
-              
+              value={this.state.status}
             />
           </div>
         }
