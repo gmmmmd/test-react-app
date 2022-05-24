@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
+import { Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
@@ -9,15 +11,9 @@ const Dialogs = (props) => {
 
   const dialogsElement = state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
   const messagesElement = state.messages.map(m => <Message key={m.id} message={m.message} />);
-  const newMessageBody = state.newMessageBody;
 
-  const onSendMessageClick = () => {
-    props.sendMessageCreator();
-  };
-
-  const onNewMessageChange = (e) => {
-    const body = e.target.value;
-    props.updateNewMessageBody(body);
+  const addNewMessage = (values) => {
+    props.sendMessageCreator(values.newMessageBody);
   };
 
   if(!props.isAuth) {
@@ -35,16 +31,26 @@ const Dialogs = (props) => {
         <ul className={classes.messages}>
           { messagesElement }
         </ul>
-        <textarea className={classes.textarea}
-          placeholder="Enter your message"
-          value={newMessageBody}
-          onChange={onNewMessageChange}
-        >
-        </textarea>
-        <button className={classes.button} onClick={onSendMessageClick}>Send message</button>
+        <AddMessageFormRedux onSubmit={addNewMessage} />
       </div>
     </div>
   );
 };
+
+const AddMessageForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit} className={classes.formMessage}>
+      <Field 
+        component="textarea" 
+        name="newMessageBody" 
+        placeholder="Enter your message" 
+        className={classes.textarea} 
+      />
+      <button className={classes.button}>Send message</button>
+    </form>
+  );
+};
+
+const AddMessageFormRedux = reduxForm({form: 'AddMessageForm'})(AddMessageForm);
 
 export default Dialogs;
