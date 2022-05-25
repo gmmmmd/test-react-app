@@ -4,6 +4,14 @@
   box-shadow: 0 0 10px red;
 }
 
+.formControl {
+  margin-bottom: 5px;
+}
+
+.formControl span {
+  display: block;
+} 
+
 .formControl.error span {
   color: red;
-} 
+}
