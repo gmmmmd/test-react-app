@@ -16,6 +16,12 @@
   display: flex;
 }
 
+.wrap {
+  display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .loginBox {
   width: 150px;
   margin-right: 15px;

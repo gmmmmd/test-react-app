@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+//import { Navigate } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
@@ -19,11 +19,11 @@ const Dialogs = (props) => {
     props.sendMessageCreator(values.newMessageBody);
   };
 
-  if(!props.isAuth) {
-    return (
-      <Navigate to="/login" />
-    );
-  }
+  // if(!props.isAuth) {
+  //   return (
+  //     <Navigate to="/login" />
+  //   );
+  // }
 
   return (
     <div className={classes.dialogs}>
