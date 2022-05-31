@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { Field } from 'redux-form';
 import { reduxForm } from 'redux-form';
 import { Navigate } from 'react-router-dom';
-import { Input } from '../common/FormsControls/FormsControls';
+import { Input, Checkbox } from '../common/FormsControls/FormsControls';
 import { required } from './../../utils/validators/validators';
 import classes from './Login.module.css';
+import styles from './../common/FormsControls/FormsControls.module.css';
 import { login } from './../../redux/auth-reducer';
 
 
 
 const LoginForm = (props) => {
+  
   return (
     <form onSubmit={props.handleSubmit}>
       <Field
@@ -28,10 +30,11 @@ const LoginForm = (props) => {
         placeholder="Password"
       />
       <Field 
-        component={Input} 
+        component={Checkbox} 
         name="rememberMe" 
-        type="checkbox" 
-      />remeber me
+        type="checkbox"
+      />
+      { props.error && <div className={styles.formSummaryError}>{ props.error }</div> }
       <div>
         <button>Login</button>
       </div>
@@ -42,6 +45,7 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({form: 'loginForm'})(LoginForm);
 
 const Login = (props) => {
+  
   const onSubmit = (formData) => {
     props.login(formData.email, formData.password, formData.rememberMe);
   };
@@ -51,7 +55,7 @@ const Login = (props) => {
       <Navigate to="/profile" />
     );
   }
-
+  // console.log(props.isAuth)
   return (
     <div className={classes.loginBox}>
       <h1>Login</h1>
