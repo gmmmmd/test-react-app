@@ -6,8 +6,6 @@ import { getUserProfile, getStatus, updateStatus } from './../../redux/profile-r
 import Profile from './Profile';
 import { withAuthRedirect } from './../../hoc/withAuthRedirect';
 
-
-
 const withRouter = (Component) => {
   const ComponentWithRouterProp = (props) => {
     const location = useLocation();
@@ -20,12 +18,15 @@ const withRouter = (Component) => {
   return ComponentWithRouterProp;
 };
 
-class ProfileContainer extends React.Component {
-  
+class ProfileContainer extends React.Component {  
   componentDidMount() {
     let userId = this.props.router.params.userId;
     if (!userId) {
       userId = this.props.authorizedUserId;
+      // if (!userId) {          80 урок, не работает
+      //   this.props.history.push("/login");
+      //   return;
+      // }
     }
     this.props.getUserProfile(userId);
     this.props.getStatus(userId);

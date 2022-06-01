@@ -6,6 +6,7 @@ import dialogsReducer from './dialogs-reducer';
 import navbarReducer from './navbar-reducer';
 import usersReducer from './users-reducer';
 import authReducer from './auth-reducer';
+import appReducer from './app-reducer';
 
 
 
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   usersPage: usersReducer,
   auth: authReducer,
   form: formReducer,
+  app: appReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunkMiddleware));

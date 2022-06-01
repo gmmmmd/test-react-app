@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import  { useParams, useLocation, useNavigate }  from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import HeaderContainer from './components/Header/HeaderContainer';
@@ -12,23 +13,26 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Login from './components/Login/Login';
-import { initializeApp } from './redux/app-reducer';
-import Preloader from './components/common/Preloader/Preloader';
+import { getAuthUserData } from './redux/auth-reducer';
 
-
-
+const withRouter = (Component) => {
+  const ComponentWithRouterProp = (props) => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const params = useParams();
+    return (
+      <Component {...props}  router={{ location, navigate, params }} />
+    );
+  };
+  return ComponentWithRouterProp;
+};
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.initializeApp();
+    this.props.getAuthUserData();
   }
 
   render() {
-    if (!this.props.initialized) {
-      return (
-        <Preloader />
-      );
-    }
     return (
       <div className="app-wrapper container">
         <HeaderContainer />
@@ -52,10 +56,6 @@ class App extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => ({
-  initialized: state.app.initialized,
-});
-
 export default compose(
-  // withRouter - не работает, 80 урок, нао разобраться
-  connect(mapStateToProps, {initializeApp})) (App);
+  withRouter,
+  (connect(null, {getAuthUserData}))(App));
