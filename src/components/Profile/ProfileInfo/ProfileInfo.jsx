@@ -1,7 +1,8 @@
 import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus';
+// import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -21,7 +22,7 @@ const ProfileInfo = (props) => {
       <div className={classes.imgBlock}>
         { /* <img src="https://get-edu.kz/wp-content/uploads/2020/04/helpbox-contact.jpg" alt="" width={300} height={300} /> */ }
         <img src={props.profile.photos.large} alt="user-avatar" width={300} height={300} />
-        <ProfileStatus 
+        <ProfileStatusWithHooks 
           status={props.status} 
           updateStatus={props.updateStatus}
         />
